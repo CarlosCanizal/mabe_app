@@ -1,4 +1,9 @@
+
 class UsersController < ApplicationController
+
+  #before_filter :authenticate_with_basic_auth
+  #skip_before_filter :authenticate_with_basic_auth, :only => [:index, :edit, :destroy]
+  #skip_before_filter :authenticate_with_basic_auth, :except => [:new,:create]
   # GET /users
   # GET /users.json
   def index

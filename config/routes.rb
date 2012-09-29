@@ -58,7 +58,7 @@ MabeApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- #root :to => 'users#new'
+ root :to => 'users#new'
  #thanks :to => 'thanks#thanks'
 
   # See how all your routes lay out with "rake routes"
