@@ -1,0 +1,56 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_id %><br />
+    <%= f.collection_select :phone_id, User.phones, :first, :last %>
+  </div>
+
+  <div><h2>Familiares<h2></div>
+
+  <div class="field">
+    Galaxy c/Plan
+    Cantidad: <%= f.select :phone1, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone1.nil? ? {:selected => 0 } : {:selected => @user.phone1} %>
+  </div>
+
+  <div class="field">
+    Galaxy s/Plan
+    Cantidad: <%= f.select :phone2, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone2.nil? ? {:selected => 0 } : {:selected => @user.phone2} %>
+  </div>
+
+  <div class="field">
+    iPhone c/Plan
+    Cantidad: <%= f.select :phone3, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone3.nil? ? {:selected => 0 } : {:selected => @user.phone3}%>
+  </div>
+
+  <div class="field">
+    Total: <br />
+    <%= @user.total  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

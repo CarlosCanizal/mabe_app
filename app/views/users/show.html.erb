@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= User.phones[@user.phone_id] %>
+</p>
+
+<p>
+  <b>Galaxy Ace con Plan:</b>
+  <%= @user.phone1%>
+</p>
+
+<p>
+  <b>Galaxy Ace sin Plan:</b>
+  <%= @user.phone2 %>
+</p>
+
+<p>
+  <b>iPhone con Plan:</b>
+  <%= @user.phone3 %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @user.total %>
+</p>
+
+
+<%= link_to 'Edit', admin_edita_path(@user) %> |
+<%= link_to 'Back', admin_lista_path %>
