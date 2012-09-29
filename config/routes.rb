@@ -1,7 +1,8 @@
 MabeApp::Application.routes.draw do
-  resources :users, only: [:new, :create ]
+  #resources :users, only: [:new, :create ]
+  resources :users
 
-  match "thanks", :to => "users#thanks"
+  #match "thanks", :to => "users#thanks"
   #match "admin_lista", :to => "users#index"
   #match "admin_muestra/:id", :to => "users#show", :as => "admin_muestra"
   #match "admin_edita/:id", :to => "users#edit", :as => "admin_edita"
@@ -57,7 +58,7 @@ MabeApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- root :to => 'users#new'
+ #root :to => 'users#new'
  #thanks :to => 'thanks#thanks'
 
   # See how all your routes lay out with "rake routes"
