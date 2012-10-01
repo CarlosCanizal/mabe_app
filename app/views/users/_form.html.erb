@@ -36,19 +36,19 @@
   <br/>
 
   <div class="field">
-    <%= User.phones[1] %>
+    <%= User.familiarPhones[1] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[1] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[1] %>
     <br/><br/>
     Cantidad: <%= f.select :phone1, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone1.nil? ? {:selected => 0 } : {:selected => @user.phone1} %>
   </div>
 
   <div class="field">
-    <%= User.phones[2] %>
+    <%= User.familiarPhones[2] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[2] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[2] %>
     <br/><br/>
     Cantidad: <%= f.select :phone2, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone2.nil? ? {:selected => 0 } : {:selected => @user.phone2} %>
   </div>
 
   <div class="field">
-    <%= User.phones[3] %>
+    <%= User.familiarPhones[3] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[3] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[3] %>
     <br/><br/>
     Cantidad: <%= f.select :phone3, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone3.nil? ? {:selected => 0 } : {:selected => @user.phone3}%>
   </div>

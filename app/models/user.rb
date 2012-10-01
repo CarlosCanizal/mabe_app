@@ -5,8 +5,18 @@ class User < ActiveRecord::Base
     def phones()
       phones = {
         1 => 'Samsung Galaxy Ace (150 Minutos / Sin Datos) $'+prices[1].to_s+' MXN mensuales',
-        2 => 'Galaxy Galaxy Ace (150 Minutos / 600 MB) $'+prices[2].to_s+' MXN mensuales',
+        2 => 'Samsung Galaxy Ace (150 Minutos / 600 MB) $'+prices[2].to_s+' MXN mensuales',
         3 => 'iPhone 4S  (300 Minutos / 800 MB) $'+prices[3].to_s+' MXN mensuales'
+      }
+    end
+  end
+
+  class << self
+    def familiarPhones()
+      familiarPhones = {
+        1 => 'Samsung Galaxy Ace (150 Minutos / Sin Datos)',
+        2 => 'Samsung Galaxy Ace (150 Minutos / 600 MB)',
+        3 => 'iPhone 4S  (300 Minutos / 800 MB)'
       }
     end
   end
@@ -14,7 +24,7 @@ class User < ActiveRecord::Base
   class << self
     def prices()
       prices = {
-        1 =>0,
+        1 =>0.00,
         2 =>192.57,
         3 =>267.75
       }
@@ -24,9 +34,9 @@ class User < ActiveRecord::Base
   class << self
     def familiares()
       familiares = {
-        1 =>0,
-        2 =>192.57,
-        3 =>267.75
+        1 =>216.00,
+        2 =>408.67,
+        3 =>520.00
       }
     end
   end
@@ -34,9 +44,9 @@ class User < ActiveRecord::Base
   class << self
     def downpayment()
       downpayment = {
-        1 =>404,
-        2 =>404,
-        3 =>2199
+        1 =>404.00,
+        2 =>404.00,
+        3 =>2199.00
       }
     end
   end

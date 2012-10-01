@@ -20,22 +20,22 @@ $(document).ready(function(){
 
 	function getTotal(){
 		var prices = new Array(0,0,192.57,267.75);
-		var familiares = new Array(0,0,192.57,267.75);
+		var familiares = new Array(0,216.00,408.67,520.00);
 		var downpayment = new Array(0,404,404,2199);
 		var user_phone_id  = $('#user_phone_id').val();
 		var price_user = prices[user_phone_id];
 		var month_total = price_user;
 
 		var total_phone1  = $('#user_phone1').val();
-		var price_phone1 = prices[1];
+		var price_phone1 = familiares[1];
 		month_total += price_phone1 * total_phone1;
 
 		var total_phone2  = $('#user_phone2').val();
-		var price_phone2 = prices[2];
+		var price_phone2 = familiares[2];
 		month_total += price_phone2 * total_phone2;
 
 		var total_phone3  = $('#user_phone3').val();
-		var price_phone3 = prices[3];
+		var price_phone3 = familiares[3];
 		month_total += price_phone3 * total_phone3;
 		month_total = convert(month_total.toFixed(2).toString());
 		return month_total;

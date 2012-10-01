@@ -31,18 +31,30 @@
 <br/><br/>
 <p><b>Familiares</b></p>
 <p>
-  <b>Galaxy Ace con Plan:</b>
-  <%= user.phone1%>
+  <%= User.familiarPhones[1] %> :
+  <b><%= user.phone1 %> Unidades</b>
+  Costo Mensual:
+  <b><%= number_to_currency (User.familiares[1] * user.phone1) %> MXN</b>
+  Pago Unico:
+  <b><%= number_to_currency (User.downpayment[1] * user.phone1) %> MXN</b>
 </p>
 
 <p>
-  <b>Galaxy Ace sin Plan:</b>
-  <%= user.phone2 %>
+  <%= User.familiarPhones[2] %> :
+  <b><%= user.phone2 %> Unidades</b>
+  Costo Mensual:
+  <b><%= number_to_currency (User.familiares[2] * user.phone2) %> MXN</b>
+  Pago Unico:
+  <b><%= number_to_currency (User.downpayment[2] * user.phone2) %> MXN</b>
 </p>
 
 <p>
-  <b>iPhone con Plan:</b>
-  <%= user.phone3 %>
+  <%= User.familiarPhones[3] %> :
+  <b><%= user.phone3 %> Unidades</b>
+  Costo Mensual:
+  <b><%= number_to_currency (User.familiares[3] * user.phone3) %> MXN</b>
+  Pago Unico:
+  <b><%= number_to_currency (User.downpayment[3] * user.phone3) %> MXN</b>
 </p>
 <br/><br/>
 <p>

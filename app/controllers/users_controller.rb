@@ -49,9 +49,9 @@ class UsersController < ApplicationController
     phone2 = params[:user][:phone2].to_i
     phone3 = params[:user][:phone3].to_i
     prices_user = User.prices[phone_id.to_i]
-    price1 = User.prices[1]
-    price2 = User.prices[2]
-    price3 = User.prices[3]
+    price1 = User.familiares[1]
+    price2 = User.familiares[2]
+    price3 = User.familiares[3]
 
     total = 0
 
