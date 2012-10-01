@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :lastname, :name, :phone_id, :phone1, :phone2, :phone3, :total
+  attr_accessible :email, :lastname, :name, :phone_id, :phone1, :phone2, :phone3, :total, :unique
 
   class << self
     def phones()
       phones = {
-        1 => 'Galaxy c/Plan  $'+prices[1].to_s+' MXN',
-        2 => 'Galaxy s/Plan  $'+prices[2].to_s+' MXN',
-        3 => 'iPhone c/Plan  $'+prices[3].to_s+' MXN'
+        1 => 'Samsung Galaxy Ace (150 Minutos / Sin Datos) $'+prices[1].to_s+' MXN mensuales',
+        2 => 'Galaxy Galaxy Ace (150 Minutos / 600 MB) $'+prices[2].to_s+' MXN mensuales',
+        3 => 'iPhone 4S  (300 Minutos / 800 MB) $'+prices[3].to_s+' MXN mensuales'
       }
     end
   end
@@ -14,17 +14,37 @@ class User < ActiveRecord::Base
   class << self
     def prices()
       prices = {
-        1 =>10,
-        2 =>20,
-        3 =>30
+        1 =>0,
+        2 =>192.57,
+        3 =>267.75
       }
     end
   end
 
-  validates :name, :lastname, :presence=>true
+  class << self
+    def familiares()
+      familiares = {
+        1 =>0,
+        2 =>192.57,
+        3 =>267.75
+      }
+    end
+  end
+
+  class << self
+    def downpayment()
+      downpayment = {
+        1 =>404,
+        2 =>404,
+        3 =>2199
+      }
+    end
+  end
+
+  validates :name, :lastname, :presence => true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, uniqueness: true, presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates :email, uniqueness: {message:"ya se encuentra registrado"}, presence: true, format: { with: VALID_EMAIL_REGEX }
   validates :phone_id , :numericality => { :greater_than => 0, :less_than_or_equal_to => 3 }
   validates :phone1 , :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10 }
   validates :phone2 , :numericality => { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 10 }

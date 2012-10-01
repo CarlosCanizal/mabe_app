@@ -62,6 +62,23 @@ class UsersController < ApplicationController
     total
   end
 
+  def get_unique
+
+    phone1 = params[:user][:phone1].to_i
+    phone2 = params[:user][:phone2].to_i
+    phone3 = params[:user][:phone3].to_i
+    price1 = User.downpayment[1]
+    price2 = User.downpayment[2]
+    price3 = User.downpayment[3]
+
+    total = 0
+
+    total += price1*phone1
+    total += price2*phone2
+    total += price3*phone3
+    total
+  end
+
   def thanks
     #@user = User.find(params[:id])
 
@@ -78,6 +95,8 @@ class UsersController < ApplicationController
 
     total = get_total
     params[:user][:total] = total
+    unique = get_unique
+    params[:user][:unique] = unique
     params[:user][:name] = params[:user][:name].titleize
     params[:user][:lastname] = params[:user][:lastname].titleize
     params[:user][:email] = params[:user][:email].downcase
@@ -118,6 +137,8 @@ class UsersController < ApplicationController
 
     total = get_total
     params[:user][:total] = total
+    unique = get_unique
+    params[:user][:unique] = unique
 
     @user = User.find(params[:id])
 

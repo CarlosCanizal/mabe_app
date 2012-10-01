@@ -6,7 +6,8 @@
     <th>Apellido</th>
     <th>Email</th>
     <th>Personal</th>
-    <th>Total</th>
+    <th>Mensual</th>
+    <th>Unico</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,8 +18,9 @@
     <td><%= user.name %></td>
     <td><%= user.lastname %></td>
     <td><%= user.email %></td>
-    <td><%= User.phones[user.phone_id] %></td>
+    <td><%= truncate(User.phones[user.phone_id], :lenght => 8)%></td>
     <td><%= number_to_currency user.total %></td>
+    <td><%= number_to_currency user.unique %></td>
     <td><%= link_to 'Ver', user %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
     <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

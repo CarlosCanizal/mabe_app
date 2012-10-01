@@ -1,5 +1,37 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
+#en:
+#  hello: "Hello world"
+
+
+#activerecord:
+#    errors:
+#      messages:
+#        name: "Nombre"
+
+#en:
+#	activerecord:
+#    	attributes:
+#      		post:
+#        		name: "Nombre"
+
+
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        email: "Correo Electronico"
+        name : "Nombre"
+        lastname : "Apellido"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "es campo requerido"
+              invalid: "tiene un formato invalido"
+            name:
+              blank: "es campo requerido"
+            lastname:
+              blank: "es campo requerido"

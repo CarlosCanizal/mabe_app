@@ -23,24 +23,32 @@
 <br/><br/>
 <p><b>Familiares</b></p>
 <p>
-  <b>Galaxy Ace con Plan:</b>
-  <%= @user.phone1%>
+  <%= User.phones[1] %> :
+  <b><%= @user.phone1 %> Unidades</b>
 </p>
 
 <p>
-  <b>Galaxy Ace sin Plan:</b>
-  <%= @user.phone2 %>
+  <%= User.phones[2] %> :
+  <b><%= @user.phone2 %> Unidades</b>
 </p>
 
 <p>
-  <b>iPhone con Plan:</b>
-  <%= @user.phone3 %>
+  <%= User.phones[3] %> :
+  <b><%= @user.phone3 %> Unidades</b>
 </p>
 
 <br/><br/>
 <p>
-  <b>Total:</b>
+  <b>Pago Mensual:</b>
+  <br/><br/>
   <span class='total'><%= number_to_currency @user.total %> MXN </span>
+</p>
+
+<br/><br/>
+<p>
+  <b>Pago Unico:</b>
+  <br/><br/>
+  <span class='total'><%= number_to_currency @user.unique %> MXN </span>
 </p>
 
 <br/><br/>

@@ -1,7 +1,7 @@
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2>Errores:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -36,28 +36,38 @@
   <br/>
 
   <div class="field">
-    Galaxy c/Plan
+    <%= User.phones[1] %>
+    <br/><br/>
     Cantidad: <%= f.select :phone1, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone1.nil? ? {:selected => 0 } : {:selected => @user.phone1} %>
   </div>
 
   <div class="field">
-    Galaxy s/Plan
+    <%= User.phones[2] %>
+    <br/><br/>
     Cantidad: <%= f.select :phone2, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone2.nil? ? {:selected => 0 } : {:selected => @user.phone2} %>
   </div>
 
   <div class="field">
-    iPhone c/Plan
+    <%= User.phones[3] %>
+    <br/><br/>
     Cantidad: <%= f.select :phone3, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone3.nil? ? {:selected => 0 } : {:selected => @user.phone3}%>
   </div>
   <br/><br/>
-  <div><b>Total</b></div>
+  <div><b>Pago Mensual</b></div>
   <br/>
   <div class="field">
-    <span id='total'></span>
+    <span class='total' id='total'></span>
+  </div>
+  <br/><br/>
+
+  <div><b>Pago Unico</b></div>
+  <br/>
+  <div class="field">
+    <span class='total' id='uniquePayment'></span>
   </div>
   <br/><br/>
   <div class="field">
-    <%= f.submit "Guardar"%>
+    <%= f.submit "Enviar"%>
   </div>
   <br/><br/>
 <% end %>

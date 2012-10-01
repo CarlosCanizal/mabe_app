@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929230541) do
+ActiveRecord::Schema.define(:version => 20121001195555) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
@@ -25,12 +25,13 @@ ActiveRecord::Schema.define(:version => 20120929230541) do
     t.string   "lastname"
     t.string   "email"
     t.integer  "phone_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "phone1"
     t.integer  "phone2"
     t.integer  "phone3"
-    t.integer  "total"
+    t.decimal  "total",      :precision => 19, :scale => 2
+    t.decimal  "unique",     :precision => 19, :scale => 2
   end
 
 end
