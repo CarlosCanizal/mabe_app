@@ -11,24 +11,29 @@
     </div>
   <% end %>
 
+  <div><b>Ingresa tus datos personales</b></div>
+  <br/>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Nombre" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    <%= f.label "Apellido" %><br />
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Correo electronico" %><br />
     <%= f.text_field :email %>
   </div>
+  <br/>
+  <div><b>Selecciona tu telefono</b></div>
+  </br>
   <div class="field">
-    <%= f.label :phone_id %><br />
     <%= f.collection_select :phone_id, User.phones, :first, :last %>
   </div>
-
-  <div><h2>Familiares<h2></div>
+  <br/>
+  <div><b>Familiares</b></div>
+  <br/>
 
   <div class="field">
     Galaxy c/Plan
@@ -44,12 +49,15 @@
     iPhone c/Plan
     Cantidad: <%= f.select :phone3, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone3.nil? ? {:selected => 0 } : {:selected => @user.phone3}%>
   </div>
-
+  <br/><br/>
+  <div><b>Total</b></div>
+  <br/>
   <div class="field">
-    Total: <span id='total'></span>
+    <span id='total'></span>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <br/><br/>
+  <div class="field">
+    <%= f.submit "Guardar"%>
   </div>
+  <br/><br/>
 <% end %>

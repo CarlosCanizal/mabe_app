@@ -1,1 +1,51 @@
+
+<% if !session[:user_id] %>
+	<script type="text/javascript">
+   	 window.location.href="/"  // put your correct path in a string here
+  	</script>
+<%end %>
 <h1>  &iexcl;MUCHAS GRACIAS!</h1>
+<% user = User.find(session[:user_id]) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= user.name %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= user.lastname %>
+</p>
+
+<p>
+  <b>Correo Electronico:</b>
+  <%= user.email %>
+</p>
+
+<p>
+  <b>Telefono personal:</b>
+  <%= User.phones[user.phone_id] %>
+</p>
+<br/><br/>
+<p><b>Familiares</b></p>
+<p>
+  <b>Galaxy Ace con Plan:</b>
+  <%= user.phone1%>
+</p>
+
+<p>
+  <b>Galaxy Ace sin Plan:</b>
+  <%= user.phone2 %>
+</p>
+
+<p>
+  <b>iPhone con Plan:</b>
+  <%= user.phone3 %>
+</p>
+<br/><br/>
+<p>
+  <b>Total:</b>
+  <span class='total'><%= number_to_currency user.total %> MXN</span>
+</p>

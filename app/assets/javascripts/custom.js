@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
 	var total = getTotal();
-	$('#total').html("$"+total);
+	$('#total').html("$"+total+" MXN");
 
 	$('select').change(function(){
-		var total = getTotal;
-		$('#total').html("$"+total);
+		var total = getTotal();
+		$('#total').html("$"+total+" MXN");
 	});
 
 

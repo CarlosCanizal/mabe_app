@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	before_filter :authenticate_with_basic_auth
-  	skip_before_filter :authenticate_with_basic_auth, :only => [:new,:create]
+  	skip_before_filter :authenticate_with_basic_auth, :only => [:new,:create,:thanks]
   	skip_before_filter :authenticate_with_basic_auth, :except => [:index,:show,:edit, :destroy] 
 end
 

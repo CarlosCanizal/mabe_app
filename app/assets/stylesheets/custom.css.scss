@@ -127,7 +127,19 @@ footer {
   height: 2em;
 }
 
-#total{
+#total, .total{
   font-size: 2em;
   
 }
+
+#userList{
+  margin: 0 auto;
+}
+
+#userList td{
+  padding:0.5em 1em;
+  text-align: center;
+}
+
+#userList tr:nth-child(even) {background: #CCC}
+/*#userList tr:nth-child(odd) {background: #999}*/

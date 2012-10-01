@@ -20,6 +20,8 @@
   <%= User.phones[@user.phone_id] %>
 </p>
 
+<br/><br/>
+<p><b>Familiares</b></p>
 <p>
   <b>Galaxy Ace con Plan:</b>
   <%= @user.phone1%>
@@ -35,11 +37,13 @@
   <%= @user.phone3 %>
 </p>
 
+<br/><br/>
 <p>
   <b>Total:</b>
-  <%= @user.total %>
+  <span class='total'><%= number_to_currency @user.total %> MXN </span>
 </p>
 
+<br/><br/>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Regresar', users_path %>

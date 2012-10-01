@@ -63,6 +63,12 @@ class UsersController < ApplicationController
   end
 
   def thanks
+    #@user = User.find(params[:id])
+
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @user }
+    #end
   end
   
 
@@ -72,35 +78,37 @@ class UsersController < ApplicationController
 
     total = get_total
     params[:user][:total] = total
+    params[:user][:name] = params[:user][:name].titleize
+    params[:user][:lastname] = params[:user][:lastname].titleize
+    params[:user][:email] = params[:user][:email].downcase
 
     @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save
         format.html { redirect_to '/thanks'}
+        session[:user_id] = @user.id
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-      phone_id = params[:user][:phone_id]
-      phone1 = params[:user][:phone1].to_i
-      phone2 = params[:user][:phone2].to_i
-      phone3 = params[:user][:phone3].to_i
-      prices_user = User.prices[phone_id.to_i]
-      price1 = User.prices[1]
-      price2 = User.prices[2]
-      price3 = User.prices[3]
+      #phone_id = params[:user][:phone_id]
+      #phone1 = params[:user][:phone1].to_i
+      #phone2 = params[:user][:phone2].to_i
+      #phone3 = params[:user][:phone3].to_i
+      #prices_user = User.prices[phone_id.to_i]
+      #price1 = User.prices[1]
+      #price2 = User.prices[2]
+      #price3 = User.prices[3]
 
-      total = 0
+      #total = 0
 
-      total += prices_user
-      total += price1*phone1
-      total += price2*phone2
-      total += price3*phone3
-
-
+      #total += prices_user
+      #total += price1*phone1
+      #total += price2*phone2
+      #total += price3*phone3
   end
 
 

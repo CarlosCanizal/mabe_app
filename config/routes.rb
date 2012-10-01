@@ -2,7 +2,8 @@ MabeApp::Application.routes.draw do
   #resources :users, only: [:new, :create ]
   resources :users
 
-  #match "thanks", :to => "users#thanks"
+  #match "users/:id/thanks", :to =>"users#thanks"
+  match "thanks", :to => "users#thanks"
   #match "admin_lista", :to => "users#index"
   #match "admin_muestra/:id", :to => "users#show", :as => "admin_muestra"
   #match "admin_edita/:id", :to => "users#edit", :as => "admin_edita"
