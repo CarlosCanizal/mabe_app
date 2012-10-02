@@ -22,11 +22,11 @@
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label "Correo electronico" %><br />
+    <%= f.label "Correo Electrónico" %><br />
     <%= f.text_field :email %>
   </div>
   <br/>
-  <div><b>Selecciona tu telefono</b></div>
+  <div><b>Selecciona tu teléfono</b></div>
   </br>
   <div class="field">
     <%= f.collection_select :phone_id, User.phones, :first, :last %>
@@ -36,19 +36,19 @@
   <br/>
 
   <div class="field">
-    <%= User.familiarPhones[1] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[1] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[1] %>
+    <%= User.familiarPhones[1] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[1] %> <b>Pago único de:</b> <%= number_to_currency User.downpayment[1] %>
     <br/><br/>
     Cantidad: <%= f.select :phone1, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone1.nil? ? {:selected => 0 } : {:selected => @user.phone1} %>
   </div>
 
   <div class="field">
-    <%= User.familiarPhones[2] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[2] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[2] %>
+    <%= User.familiarPhones[2] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[2] %> <b>Pago único de:</b> <%= number_to_currency User.downpayment[2] %>
     <br/><br/>
     Cantidad: <%= f.select :phone2, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone2.nil? ? {:selected => 0 } : {:selected => @user.phone2} %>
   </div>
 
   <div class="field">
-    <%= User.familiarPhones[3] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[3] %> <b>Pago unico de:</b> <%= number_to_currency User.downpayment[3] %>
+    <%= User.familiarPhones[3] %> <b>Costo Mensual:</b> <%= number_to_currency User.familiares[3] %> <b>Pago único de:</b> <%= number_to_currency User.downpayment[3] %>
     <br/><br/>
     Cantidad: <%= f.select :phone3, ((1..10).map {|i| [i,i] } << ["Ninguno",0]), @user.phone3.nil? ? {:selected => 0 } : {:selected => @user.phone3}%>
   </div>
@@ -60,7 +60,7 @@
   </div>
   <br/><br/>
 
-  <div><b>Pago Unico</b></div>
+  <div><b>Pago Único</b></div>
   <br/>
   <div class="field">
     <span class='total' id='uniquePayment'></span>

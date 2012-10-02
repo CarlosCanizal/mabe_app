@@ -21,7 +21,7 @@ en:
   activerecord:
     attributes:
       user:
-        email: "Correo Electronico"
+        email: "Correo Electrónico"
         name : "Nombre"
         lastname : "Apellido"
     errors:
